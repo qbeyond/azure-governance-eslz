@@ -10,7 +10,7 @@ locals {
             parameters = lookup(var.management_group_policy_assignment_parameter_override, k, {})
             access_control = {}
     }}}
-    root_mgs = compact([for k, mg in var.management_groups: mg.archetype_id == "root" ? k : ""])
+    root_mgs = compact([for k, mg in var.management_groups: mg.archetype_id == "qby_root" ? k : ""])
     caf_root_id = length(local.root_mgs) == 1 ? local.root_mgs[0] : "es"
 
     # Get all needed role assignments from nested map
