@@ -60,7 +60,7 @@ resource "azuread_group_member" "sp-assignments" {
 }
 
 module "governance_eslz" {
-  source = "git::https://github.com/Azure/terraform-azurerm-caf-enterprise-scale.git"
+  source = "git::https://github.com/Azure/terraform-azurerm-caf-enterprise-scale.git?ref=v2.0.1"
 
   providers = {
     azurerm              = azurerm
