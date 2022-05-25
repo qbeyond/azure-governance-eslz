@@ -1,8 +1,6 @@
 {
   "qby_root": {
     "policy_assignments": [
-      "Deploy-ASC-Monitoring",
-      "Deploy-MDFC-Config",
       "Deploy-AzActivity-Log",
       "Deploy-LX-Arc-Monitoring",
       "Deploy-Resource-Diag",
