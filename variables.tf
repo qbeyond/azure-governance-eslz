@@ -50,3 +50,9 @@ variable "management_group_policy_assignment_parameter_override" {
   DOC
   default = {}
 }
+
+variable "library_path" {
+  type        = string
+  description = "If specified, sets the path to a custom library folder for archetype artefacts."
+  default     = ""
+}
