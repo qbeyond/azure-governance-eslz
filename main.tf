@@ -83,5 +83,5 @@ module "governance_eslz" {
   disable_telemetry = true
   
   custom_landing_zones = local.caf_input
-  library_path = "${path.module}/archetype_lib"
+  library_path = var.library_path
 }
