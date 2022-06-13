@@ -4,7 +4,6 @@ variable "management_groups" {
     parent_management_group_id = optional(string)
     subscription_ids           = optional(list(string))
     archetype_id               = optional(string)
-    is_default                 = optional(bool)
   }))
   description = <<-DOC
   ```
@@ -13,8 +12,7 @@ variable "management_groups" {
     parent_management_group_id   = optional(string)       (Must be a <mg_id> of another MG)
     subscription_ids             = optional(list(string)) (List of subscription IDs that should be moved into that MG)
     archetype_id                 = optional(string)       (Name of an archetype as defined by CAF built-in or QBY archetype definitions)
-    is_default                   = optional(string)       (Mark this MG as the default Management Group. This will prevent errors when moving subscriptions)
-  }
+   }
   ```
   DOC
   default = {}
