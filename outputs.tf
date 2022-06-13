@@ -12,3 +12,8 @@ output "service_principals" {
     value = azuread_service_principal.sp
     description = "All service principals that have been created"
 }
+    
+output "applications" {
+    value = azuread_application.apps
+    description = "All AAD Applications that have been created"
+}
