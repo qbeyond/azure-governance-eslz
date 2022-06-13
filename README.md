@@ -52,6 +52,7 @@ Use the archetype\_lib folder in this repo to add custom archetypes, policy defi
 | Name | Description |
 |------|-------------|
 | <a name="output_ad_groups"></a> [ad\_groups](#output\_ad\_groups) | All AAD Groups that have been created |
+| <a name="output_applications"></a> [applications](#output\_applications) | All AAD Applications that have been created |
 | <a name="output_caf_output"></a> [caf\_output](#output\_caf\_output) | Passed through output of the underlying CAF module |
 | <a name="output_service_principals"></a> [service\_principals](#output\_service\_principals) | All service principals that have been created |
 <!-- END_TF_DOCS -->
