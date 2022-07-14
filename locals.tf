@@ -16,7 +16,7 @@ locals {
     # Get all needed role assignments from nested map
     group_role_assignments = merge(flatten([
         for group, assignments in var.group_assignments: [
-            for role, scopes in assignments: role != "service_principals" ? {
+            for role, scopes in assignments: (role != "service_principals" && role != "assignable_to_role") ? {
                 for scope in scopes: "${group}_${role}_${scope}" => {
                     scope = coalesce(
                         scope == "root" ? format("/providers/Microsoft.Management/managementGroups/%s", data.azurerm_client_config.current.tenant_id) : null,

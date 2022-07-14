@@ -31,7 +31,8 @@ variable "group_assignments" {
   "<group_name>" = {
     service_principals = optional(list(string))    (list of service principals that should be added as members) 
     "<role>"           = list(string)              (<role> must be a role_definition_name or role_definition_id from azure, every element must be a scope: "mg:<mg_id>", "sub:<subscription_id>", "root" for Tenant Root Group or a full scope ID)
-  }
+    assignable_to_role = bool                      (Setting this value to true is a requirement for PIM, defaults to false)
+}
   ```
   DOC
   default = {}
