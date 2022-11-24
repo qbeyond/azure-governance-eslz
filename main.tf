@@ -18,7 +18,6 @@ terraform {
       version = "~> 2.15.0"
     }
   }
-  experiments = [module_variable_optional_attrs]
 }
 
 data "azurerm_client_config" "current" {}
