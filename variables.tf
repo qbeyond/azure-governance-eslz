@@ -11,21 +11,21 @@ variable "management_groups" {
     display_name                 = string
     parent_management_group_id   = optional(string)       (Must be a <mg_id> of another MG)
     subscription_ids             = optional(list(string)) (List of subscription IDs that should be moved into that MG)
-    archetype_id                 = optional(string)       (Name of an archetype as defined by CAF built-in or QBY archetype definitions)
+    archetype_id                 = optional(string)       (Name of an archetype as defined by CAF built-in or custom archetype definitions)
    }
   ```
   DOC
-  default = {}
+  default     = {}
 
   validation {
-    condition = length(compact([for k, mg in var.management_groups: mg.archetype_id == "qby_root" ? k : ""])) == 1 || length(compact([for k, mg in var.management_groups: mg.archetype_id])) == 0
-    error_message = "Management groups must have exactly one qby_root archetype or none at all."
+    condition     = length(compact([for k, mg in var.management_groups : mg.archetype_id == "alz_root" ? k : ""])) == 1 || length(compact([for k, mg in var.management_groups : mg.archetype_id])) == 0
+    error_message = "Management groups must have exactly one alz_root archetype or none at all."
   }
 }
 
 
 variable "group_assignments" {
-  type = map(map(list(string)))
+  type        = map(map(list(string)))
   description = <<-DOC
   ```
   "<group_name>" = {
@@ -34,21 +34,21 @@ variable "group_assignments" {
 }
   ```
   DOC
-  default = {}
+  default     = {}
 }
 
 variable "pim_enabled_groups" {
-  type = list(string)
+  type        = list(string)
   description = <<-DOC
   ```
   pim_enabled_groups = ["groupA", "groupB"]     (sets the value of assignable_to_role to true)
   ```
   DOC
-  default = []
+  default     = []
 }
 
 variable "management_group_policy_assignment_parameter_override" {
-  type = any
+  type        = any
   description = <<-DOC
   ```
   "<mg_id>" = {
@@ -58,7 +58,7 @@ variable "management_group_policy_assignment_parameter_override" {
   }
   ```
   DOC
-  default = {}
+  default     = {}
 }
 
 variable "library_path" {
