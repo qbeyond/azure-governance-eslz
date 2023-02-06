@@ -41,7 +41,7 @@ module "azure_landing_zone" {
     "sm-rd" = {
       display_name               = "R&D"
       parent_management_group_id = "self-managed"
-      subscription_ids           = local.subscription_ids_sandboxes
+      subscription_ids           = concat(local.subscription_ids_sandboxes, [])
     }
     "sm-lz" = {
       display_name               = "Landing Zones"
@@ -74,23 +74,23 @@ module "azure_landing_zone" {
     "msp-platform-identity" = {
       display_name               = "Identity"
       parent_management_group_id = "msp-platform"
-      subscription_ids           = [local.subscription_ids_identity]
+      subscription_ids           = concat(local.subscription_ids_identity, [])
     }
     "msp-platform-management" = {
       display_name               = "Management"
       parent_management_group_id = "msp-platform"
-      subscription_ids           = [local.subscription_ids_management, local.subscription_ids_prd_azdevops]
+      subscription_ids           = concat(local.subscription_ids_management, local.subscription_ids_prd_azdevops)
     }
     "msp-platform-connectivity" = {
       display_name               = "Connectivity"
       parent_management_group_id = "msp-platform"
-      subscription_ids           = [local.subscription_ids_connectivity]
+      subscription_ids           = concat(local.subscription_ids_connectivity, [])
     }
 
     "msp-lz-prd" = {
       display_name               = "PRD"
       parent_management_group_id = "msp-lz"
-      subscription_ids           = local.subscription_ids_msp_lz_prd
+      subscription_ids           = concat(local.subscription_ids_msp_lz_prd, [])
     }
     "msp-lz-qas" = {
       display_name               = "QAS"
