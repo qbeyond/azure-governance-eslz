@@ -15,5 +15,4 @@ locals {
 
   eslz_subs = flatten([local.subscription_ids_management, local.subscription_ids_identity, local.subscription_ids_connectivity, local.subscription_ids_prd_azdevops, local.subscription_ids_sandboxes])
 
-  tags = merge(yamldecode(file("${path.root}/tags.yaml"))...)
 }
