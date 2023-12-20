@@ -66,3 +66,9 @@ variable "library_path" {
   description = "If specified, sets the path to a custom library folder for archetype artefacts."
   default     = ""
 }
+
+variable "template_file_variables" {
+  type        = any
+  description = "If specified, provides the ability to define custom template variables used when reading in template files from the built-in and custom library_path."
+  default     = {}
+}
