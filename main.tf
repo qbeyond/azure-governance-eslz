@@ -61,13 +61,15 @@ resource "azuread_group_member" "sp-assignments" {
 
 module "governance_eslz" {
   source  = "Azure/caf-enterprise-scale/azurerm"
-  version = "3.2.0"
+  version = "5.0.3"
 
   providers = {
     azurerm              = azurerm
     azurerm.management   = azurerm
     azurerm.connectivity = azurerm
   }
+
+  default_location = var.default_location
 
   root_parent_id   = data.azurerm_client_config.current.tenant_id
   root_id = local.caf_root_id

@@ -72,3 +72,8 @@ variable "template_file_variables" {
   description = "If specified, provides the ability to define custom template variables used when reading in template files from the built-in and custom library_path."
   default     = {}
 }
+
+variable "default_location" {
+  type        = string
+  description = "Must be specified, e.g `eastus`. Will set the Azure region in which region bound resources will be deployed. Please see: https://azure.microsoft.com/en-gb/global-infrastructure/geographies/"
+}
