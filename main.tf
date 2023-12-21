@@ -85,7 +85,8 @@ module "governance_eslz" {
   
   disable_telemetry = true
   
-  custom_landing_zones    = local.caf_input
-  template_file_variables = var.template_file_variables
-  library_path            = var.library_path
+  custom_landing_zones            = local.caf_input
+  template_file_variables         = var.template_file_variables
+  strict_subscription_association = true
+  library_path                    = var.library_path
 }
